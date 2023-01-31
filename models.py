@@ -3,7 +3,7 @@ from sqlalchemy import Column, String, Integer, create_engine, Date, Float
 from flask_sqlalchemy import SQLAlchemy
 import json
 from datetime import date
-from config import database_setup
+#from config import database_setup
 
 #----------------------------------------------------------------------------#
 # Database Setup 
@@ -11,8 +11,10 @@ from config import database_setup
 
 # Use Production Database.
 # If run locally, key does not exist, so use locally set database instead.
-database_path = os.environ.get('DATABASE_URL', "postgres://{}:{}@{}/{}".format(database_setup["user_name"], database_setup["password"], database_setup["port"], database_setup["database_name_test"]))
-
+#database_path = os.environ.get('DATABASE_URL', "postgres://{}:{}@{}/{}".format(database_setup["user_name"], database_setup["password"], database_setup["port"], database_setup["database_name_test"]))
+database_path = os.environ['DATABASE_URL']
+if database_path.startswith("postgres://"):
+  database_path = database_path.replace("postgres://", "postgresql://", 1)
 db = SQLAlchemy()
 
 def setup_db(app, database_path=database_path):
