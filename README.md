@@ -96,7 +96,7 @@ Additionally, common pitfalls & error messages are explained, if applicable.
 
 ### Base URL
 
-URL
+https://fsnd-z7cs.onrender.com
 
 ### Authentification
 
@@ -141,7 +141,7 @@ Each ressource documentation is clearly structured:
 Query paginated actors.
 
 ```bash
-$ curl -X GET URL 
+$ curl -X GET URL https://fsnd-z7cs.onrender.com/actors?page1
 ```
 - Fetches a list of dictionaries of examples in which the keys are the ids with all available fields
 - Request Arguments: 
@@ -174,7 +174,7 @@ $ curl -X GET URL
 If you try fetch a page which does not have any actors, you will encounter an error which looks like this:
 
 ```bash
-$ curl -X GET ERRORURL
+$ curl -X GET  https://fsnd-z7cs.onrender.com/actors?page156789
 ```
 
 will return
@@ -193,7 +193,7 @@ will return
 Insert new actor into database.
 
 ```bash
-$ curl -X POST PostURL
+$ curl -X POST https://fsnd-z7cs.onrender.com/actors
 ```
 
 - Request Arguments: **None**
@@ -219,7 +219,7 @@ If you try to create a new actor without a requiered field like `name`,
 it will throw a `422` error:
 
 ```bash
-$ curl -X GET ERRORURL1
+$ curl -X GET https://fsnd-z7cs.onrender.com/actors?page123124
 ```
 
 will return
@@ -238,7 +238,7 @@ will return
 Edit an existing Actor
 
 ```bash
-$ curl -X PATCH  edit url
+$ curl -X PATCH  https://fsnd-z7cs.onrender.com/actors/1
 ```
 
 - Request Arguments: **integer** `id from actor you want to update`
@@ -275,7 +275,7 @@ $ curl -X PATCH  edit url
 If you try to update an actor with an invalid id it will throw an `404`error:
 
 ```bash
-$ curl -X PATCH 404 error
+$ curl -X PATCH https://fsnd-z7cs.onrender.com/actors/125
 ```
 
 will return
@@ -303,7 +303,7 @@ Additionally, trying to update an Actor with already existing field values will 
 Delete an existing Actor
 
 ```bash
-$ curl -X DELETE deleteurl
+$ curl -X DELETE https://fsnd-z7cs.onrender.com/actors/1
 ```
 
 - Request Arguments: **integer** `id from actor you want to delete`
@@ -325,7 +325,7 @@ $ curl -X DELETE deleteurl
 If you try to delete actor with an invalid id, it will throw an `404`error:
 
 ```bash
-$ curl -X DELETE delete404 error
+$ curl -X DELETE https://fsnd-z7cs.onrender.com/actors/125
 ```
 
 will return
@@ -344,7 +344,7 @@ will return
 Query paginated movies.
 
 ```bash
-$ curl -X GET url
+$ curl -X GET https://fsnd-z7cs.onrender.com/movies?page1
 ```
 - Fetches a list of dictionaries of examples in which the keys are the ids with all available fields
 - Request Arguments: 
@@ -376,7 +376,7 @@ $ curl -X GET url
 If you try fetch a page which does not have any movies, you will encounter an error which looks like this:
 
 ```bash
-$ curl -X GET nexturl
+$ curl -X GET https://fsnd-z7cs.onrender.com/movies?page123124
 ```
 
 will return
@@ -395,7 +395,7 @@ will return
 Insert new Movie into database.
 
 ```bash
-$ curl -X POST 
+$ curl -X POST https://fsnd-z7cs.onrender.com/movies
 ```
 
 - Request Arguments: **None**
@@ -419,7 +419,7 @@ If you try to create a new movie without a requiered field like `name`,
 it will throw a `422` error:
 
 ```bash
-$ curl -X GET 
+$ curl -X GET https://fsnd-z7cs.onrender.com/movies?page123124
 ```
 
 will return
@@ -438,7 +438,7 @@ will return
 Edit an existing Movie
 
 ```bash
-$ curl -X PATCH 
+$ curl -X PATCH https://fsnd-z7cs.onrender.com/movies/1
 ```
 
 - Request Arguments: **integer** `id from movie you want to update`
@@ -473,7 +473,7 @@ $ curl -X PATCH
 If you try to update an movie with an invalid id it will throw an `404`error:
 
 ```bash
-$ curl -X PATCH 
+$ curl -X PATCH https://fsnd-z7cs.onrender.com/movies?page123124
 ```
 
 will return
@@ -487,7 +487,7 @@ will return
 ```
 Additionally, trying to update an Movie with already existing field values will result in an `422` error:
 
-```js
+```js https://fsnd-z7cs.onrender.com/movies/1
 {
   "error": 422,
   "message": "provided field values are already set. No update needed.",
@@ -501,7 +501,7 @@ Additionally, trying to update an Movie with already existing field values will 
 Delete an existing movie
 
 ```bash
-$ curl -X DELETE 
+$ curl -X DELETE https://fsnd-z7cs.onrender.com/movies/1
 ```
 
 - Request Arguments: **integer** `id from movie you want to delete`
@@ -523,7 +523,7 @@ $ curl -X DELETE
 If you try to delete movie with an invalid id, it will throw an `404`error:
 
 ```bash
-$ curl -X DELETE 
+$ curl -X DELETE https://fsnd-z7cs.onrender.com/movies/125
 ```
 
 will return
