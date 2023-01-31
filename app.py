@@ -12,7 +12,7 @@ except ImportError:
 
 from flask_sqlalchemy import SQLAlchemy
 from auth import AuthError, requires_auth
-from models import db_drop_and_create_all, setup_db, Actors, Movies, Performance
+from models import db_fresh_db, setup_db, Actors, Movies, Performance
 from config import pagination_service
 
 ROWS  = pagination_service['example']
